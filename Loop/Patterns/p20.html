@@ -10,22 +10,40 @@
     <script>
 
     var n=5;
-    var px=py=n;
+    var px=py=5;
     var i,j;
 
-    for(i=1;i<=n;i++){
-        for(j=1;j<=n*2;j++){
-            if(j==px||j==py){
-                document.write("*");
+    // for(i=1;i<=n;i++){
+    //     for(j=1;j<=n*2;j++){
+    //         if(j==px||j==py){
+    //             document.write("*");
+    //         }
+    //         else{
+    //             document.write("&nbsp ");
+    //         }
+    //     }
+    //     px--;
+    //     py++;
+    //     document.write("<br>");
+    // }
+    var z = "&nbsp "
+   
+        var m = 5;
+        for (i = 1; i < 5; i++) {
+            for (j = 1; j <= m - 1; j++) {
+                document.write(z);
             }
-            else{
-                document.write("&nbsp ");
+            m--;
+            for (k = 1; k <= 2 * i - 1; k++) {
+                if (k == 1 || k == 2 * i - 1)
+                    document.write(k);
+
+                else
+                    document.write(z);
             }
+            
+            document.write('<br>');
         }
-        px--;
-        py++;
-        document.write("<br>");
-    }
     </script>
 </body>
 </html>

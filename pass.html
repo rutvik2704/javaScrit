@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!--<input type="password" name="" id="input">
+    <button id="show">Show</button>
+    <button id="hide">hide</button><br> 
+    <button id="ShowHide">Show</button>
+<script>
+         var input = document.querySelector("#input");
+         var btn = document.querySelector("#show");
+        //  btn.addEventListener("click",function(){
+        //     // console.log("parth");
+        //     input.type="text";
+        // })
+
+        var btn2 = document.querySelector("#hide");
+        // btn2.addEventListener("click",function(){
+        //     console.log("hide");
+        //     input.type="password";
+        // })
+        var btn3 = document.querySelector("#ShowHide");
+        btn3.addEventListener("click",function(){
+            // console.log("showhide");
+           if(input.type == 'password'){
+              input.type='text';
+            btn3.textContent = 'Hide';
+           }else{
+            input.type='password';
+            btn3.textContent = 'Show';
+           }
+        })
+</script> -->
+<input type="password" name="" id="input">
+<i class="fa-solid fa-eye"></i>
+<!-- <i class="fa-solid fa-eye-low-vision"></i>-->
+
+<script>
+     var input = document.querySelector("#input");
+     var icon= document.querySelector(".fa-eye");
+    icon.addEventListener("click",function(){
+        // console.log("hiii");
+       if(input.type == 'password'){
+          input.type='text';
+          icon.classList.remove('fa-eye')
+          icon.innerHTML='<i class="fa-solid fa-eye-low-vision"></i>';
+       }else{
+        input.type='password';
+        icon.classList.remove('fa-eye')
+        icon.innerHTML='<i class="fa-solid fa-eye"></i>';
+       }
+    })
+</script>
+
+</body>
+</html>

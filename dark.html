@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .dark{
+            background-color: black;
+        }
+        i .fa-sun{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<!-- <img src="moon.jpg" alt=""  id="moon" width="50px">
+
+   <script>
+    var moon = document.querySelector("#moon");
+    var body  =document.querySelector("body");
+    moon.addEventListener("click",function(){
+        body.classList.toggle("dark");
+        if(body.classList.contains("dark")== true){
+            moon.src='sun.jpg'
+        }else{
+            moon.src='moon.jpg'
+        }
+    })
+   </script> -->
+   <i class="fa-solid fa-moon"></i>
+    <!-- <i class="fa-solid fa-sun"></i> -->
+
+
+    <script>
+        var icon= document.querySelector(".fa-moon");
+        var body= document.querySelector("body");
+        icon.addEventListener("click",function() {
+            body.classList.toggle("dark");
+            if(body.classList.contains("dark")== true){
+                 icon.classList.remove('fa-moon')
+                 icon.innerHTML='<i class="fa-solid fa-sun"></i>';
+            }else{
+                icon.classList.remove('fa-sun');
+                 icon.innerHTML='<i class="fa-solid fa-moon"></i>';
+            }
+        })
+    </script>
+</body>
+</html>
