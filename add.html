@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .add{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+       <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, corporis.</p>
+       <button id="add">Add</button>
+       <button id="remove">remove</button>
+       <button id="AddRemove">AddRemove</button>
+       <script>
+        var add = document.querySelector('#add');
+        var p1 = document.querySelector('#p1');
+        var remove = document.querySelector('#remove');
+        var AddRemove = document.querySelector('#AddRemove');
+        add.addEventListener("click",function () {
+            // console.log("hi");
+            //   p1.style.color= 'red';
+            //   p1.style.backgroundColor= 'red';
+            p1.classList.add("add");
+        })
+        remove.addEventListener("click",function () {
+            console.log("hi");
+            //   p1.style.color= 'red';
+            p1.classList.remove("add");
+        })
+        AddRemove.addEventListener("click",function () {
+            // console.log("hi");
+            p1.classList.toggle("add");
+        })
+       </script>
+</body>
+</html>

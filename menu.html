@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header{
+            display: flex;
+            width: 100%;
+            border: 2px solid;
+        }
+        h1{
+            font-size: 30px;
+        }
+        #btn{
+           display: none;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+           width: 100%;
+           flex-direction: unset;
+        }
+        li{
+          margin: 10px 20px;
+        }
+        li a{
+            text-decoration: none;
+        }
+        @media (max-width:576px){
+            #btn{
+           display: block;
+        }
+      
+        ul{
+            list-style: none;
+            display: flex;
+           width: 100%;
+           flex-direction: column;
+           margin-top: -130%;
+        }
+        .nav-up{
+            margin-top: 0%;
+        }
+       
+        }
+    </style>
+</head>
+<body> <div class="header">
+    <div class="logo"> <h1>logo</h1></div>
+     
+    <div class="left">
+      <ul class="menu">
+        <li><a href="">Home</a></li>
+        <li><a href="">Home</a></li>
+        <li><a href="">Home</a></li>
+        <li><a href="">Home</a></li>
+      </ul>
+    </div>
+      <div class="parth"> <button id="btn">Add</button></div>
+     
+    </div>
+    <script>
+        var btn = document.querySelector("#btn");
+        var menu = document.querySelector(".menu");
+        btn.addEventListener("click",function() {
+            // console.log("hi");
+            menu.classList.toggle("nav-up");
+
+        })
+    </script>
+</body>
+</html>
