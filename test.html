@@ -1,0 +1,30 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="" id="a"><br><br>
+    <input type="number" name="" id="b"><br><br>
+    <button id="submit" type='submit'>submit</button><br><br>
+    <script>
+    var submit = document.querySelector("#submit")
+    let a = document.getElementById("a");
+    let b = document.getElementById("b");
+    submit.addEventListener("click",function () {
+    if(a.value < b.value){
+        document.write("b is max")
+    } else if(a.value > b.value){
+        document.write("a is min")
+    }else{
+        document.write("both value is ")
+    }
+    })
+    
+
+    </script>
+
+</body>
+</html>
