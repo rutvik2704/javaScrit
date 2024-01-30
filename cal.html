@@ -2,30 +2,55 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Calculator</title>
+
 </head>
+
+
 
 <body>
 
+
+
     <!-- input fields -->
+
     <label for="x">X = </label>
+
     <input type="number" name="x" id="input1">
 
+
+
     <label for="y">y = </label>
+
     <input type="number" name="y" id="input2">
+
 <br>
+
 <br>
+
+
 
     <!-- button -->
+
     <input type="submit" value="+" id="plus" onclick="add()">
+
     <input type="submit" value="-" id="minus">
+
     <input type="submit" value="/" id="divide">
+
     <input type="submit" value="*" id="multiply">
 
+
+
     <h3>Output = <span id="msg"></span></h3>
+
     <!-- javascript -->
+
     <script>
         let x = document.querySelector("#input1");
         let y = document.querySelector("#input2");

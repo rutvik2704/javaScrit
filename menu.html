@@ -1,74 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Header</title>
+
+    <!-- Font-Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
-        .header{
-            display: flex;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
             width: 100%;
-            border: 2px solid;
+            height: 100%;
+            border: 1px solid black;
         }
-        h1{
-            font-size: 30px;
+
+        .innercontainer {
+            background-color: #ffffff;
+            color: black;
         }
-        #btn{
-           display: none;
-        }
-        ul{
-            list-style: none;
+
+        .navbar {
             display: flex;
-           width: 100%;
-           flex-direction: unset;
+            justify-content: space-between;
+
         }
-        li{
-          margin: 10px 20px;
+
+        .h3 {
+            padding: 10px 20px;
+            font-size: 25px;
         }
-        li a{
+
+        .h3 img {
+            border-radius: 50%;
+        }
+
+        .links .ul {
+            display: flex;
+            height: 100%;
+            align-items: center;
+        }
+
+        .ul li {
+            list-style-type: none;
+            padding: 10px 20px;
+        }
+
+        .ul li a {
             text-decoration: none;
+            color: rgb(0, 0, 0);
         }
-        @media (max-width:576px){
-            #btn{
-           display: block;
+
+        /* hamburger */
+        .hamburger {
+            display: none;
         }
-      
-        ul{
-            list-style: none;
-            display: flex;
-           width: 100%;
-           flex-direction: column;
-           margin-top: -130%;
+
+        .shutter {
+            display: none;
         }
-        .nav-up{
-            margin-top: 0%;
-        }
-       
+
+        @media (max-width:576px) {
+            .hamburger {
+                display: flex;
+                justify-content: end;
+                padding-right: 30px;
+                align-items: center;
+            }
+
+            .links {
+                display: none;
+            }
+
+            #menu {
+                cursor: pointer;
+            }
+
+            .shutter {
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                top: 80px;
+                width: 100%;
+                height: 300px;
+                transform: translateY(-10px);
+                /* transition: 1s all ease-in; */
+            }
+
+            .shutter .ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .shutter .ul li {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                list-style-type: none;
+                width: 100%;
+                padding: 10px 20px;
+                background: rgb(128, 128, 128, 0.5);
+            }
+
+            .shutter .ul li a {
+                text-decoration: none;
+                color: rgb(0, 0, 0);
+            }
         }
     </style>
 </head>
-<body> <div class="header">
-    <div class="logo"> <h1>logo</h1></div>
-     
-    <div class="left">
-      <ul class="menu">
-        <li><a href="">Home</a></li>
-        <li><a href="">Home</a></li>
-        <li><a href="">Home</a></li>
-        <li><a href="">Home</a></li>
-      </ul>
-    </div>
-      <div class="parth"> <button id="btn">Add</button></div>
-     
-    </div>
-    <script>
-        var btn = document.querySelector("#btn");
-        var menu = document.querySelector(".menu");
-        btn.addEventListener("click",function() {
-            // console.log("hi");
-            menu.classList.toggle("nav-up");
 
-        })
+<body>
+    <div class="Container">
+        <div class="innercontainer">
+            <nav class="navbar">
+                <div class="h3">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/014/604/020/small/girl-happy-face-cartoon-cute-png.png"
+                        alt="" width="50px">
+                </div>
+                <div class="links">
+                    <ul class="ul">
+                        <li><a href="#" target="">Home</a></li>
+                        <li><a href="#" target="">Projects</a></li>
+                        <li><a href="#" target="">About </a></li>
+                        <li><a href="#" target="">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="hamburger">
+                    <i class="fa-solid fa-bars on" id="menu" onclick="shutter()"></i>
+                </div>
+                <div class="shutter">
+                    <ul class="ul">
+                        <li><a href="#" target="">Home</a></li>
+                        <li><a href="#" target="">Projects</a></li>
+                        <li><a href="#" target="">About </a></li>
+                        <li><a href="#" target="">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- javascript -->
+    <script>
+        function shutter() {
+            let x = document.querySelector(".shutter");
+
+            if (x.style.display === "flex") {
+                x.style.display = "none";
+
+            } else {
+                x.style.display = "flex";
+
+            }
+        }
+
+
+
+
     </script>
 </body>
+
 </html>

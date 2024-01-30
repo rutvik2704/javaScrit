@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="cal.css"> -->
+    <style>
+        .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+  }
+  
+  .calculator {
+    background-color: rgb(44, 45, 46);
+    border-radius: 15px;
+    padding: 15px;
+  }
+  .calculator form input {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background: transparent;
+    font-size: 20px;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: -5px -6px 15px black;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+  }
+  
+  form .display {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+  }
+  form .display input {
+    text-align: right;
+    flex: 1;
+    font-size: 30px;
+    padding-right: 10px;
+  }
+  
+  .calculator form input.equal {
+    width: 45%;
+  }
+  
+  form input.operator {
+   color: #33ffd8;
+  }
+  
+    </style>
+
+    
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form action="#">
+                <div class="display">
+                    <input type="text" name="display" id="inputbox" placeholder="0">
+                </div>
+                <div>
+                    <input type="button" value="Ac" class="operator"  onclick="clear()">
+                    <input type="button" value="DE" class="operator" onclick="del()" >
+                    <input type="button" value="." class="operator" onclick="displayV('0')" >
+                    <input type="button" value="/" class="operator" onclick="displayV('/')" >
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="displayV('7')"  >
+                    <input type="button" value="8" onclick="displayV('8')" >
+                    <input type="button" value="9" onclick="displayV('9')" >
+                    <input type="button" value="*" class="operator" onclick="displayV('*')"  >
+                </div>
+                <div>
+                    <input type="button" value="4" onclick="displayV('4')">
+                    <input type="button" value="5"  onclick="displayV('5')">
+                    <input type="button" value="6"  onclick="displayV('6')">
+                    <input type="button" value="-" class="operator" onclick="displayV('-')" >
+                </div>
+                <div>
+                    <input type="button" value="1"  onclick="displayV('1')">
+                    <input type="button" value="2" onclick="displayV('2')">
+                    <input type="button" value="3"  onclick="displayV('3')" >
+                    <input type="button" value="+"  class="operator" onclick="displayV('+')">
+                </div>
+                <div>
+                    <input type="button" value="00"   onclick="displayV('00')">
+                    <input type="button" value="0" onclick="displayV('0')" >
+                    <input type="button" value="="  onclick="cal('=')">
+                </div>
+            </form>
+        </div>
+    </div>
+   <script>
+    //  var arr = ['*','+','/','-']
+        function displayV(value){
+          var inpt =  document.getElementById('inputbox')
+
+           if(value == '+' || value == '*' || value == '-' || value == '/'  ){
+                        if(inpt.value.includes('+')){
+                           var data = inpt.value.split('+')
+                            var result = Number(data[0])+Number(data[1])
+                            inpt.value = result+value  
+
+            }else if(inpt.value.includes('-')){ 
+               var data = inpt.value.split('-')
+                            var result = Number(data[0])-Number(data[1])
+                            inpt.value = result+value  
+                 
+
+            }  else if(inpt.value.includes('*')){
+                   var data = inpt.value.split('*')
+                            var result = Number(data[0])*Number(data[1])
+                            inpt.value = result+value  
+
+            } else if(inpt.value.includes('/')){
+                   var data = inpt.value.split('/')
+                            var result = Number(data[0])/Number(data[1])
+                            inpt.value = result+value  
+
+            } else {
+               inpt.value += value    
+            }
+           }else{
+             inpt.value += value    
+           }
+           
+        }
+
+        function cal(val){
+              var inpt =  document.getElementById('inputbox')
+
+             if(inpt.value.includes('+')){
+                           var data = inpt.value.split('+')
+                            var result = Number(data[0])+Number(data[1])
+                            inpt.value = result  
+
+            }else if(inpt.value.includes('-')){ 
+               var data = inpt.value.split('-')
+                            var result = Number(data[0])-Number(data[1])
+                            inpt.value = result
+                 
+
+            }  else if(inpt.value.includes('*')){
+                   var data = inpt.value.split('*')
+                            var result = Number(data[0])*Number(data[1])
+                            inpt.value = result
+
+            } else if(inpt.value.includes('/')){
+                   var data = inpt.value.split('/')
+                            var result = Number(data[0])/Number(data[1])
+                            inpt.value = result 
+
+            }
+             
+        }
+   </script>
+</body>
+</html>
+</body>
+</html>
